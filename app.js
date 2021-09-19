@@ -10,7 +10,7 @@ $(function(){
 
 	$('#plato').append(
 						"<b><p style='color:red'>GRADE TAMANHO 5,5</p></b>"+
-						'<p>Pressione L para girar esquerda 90&#176 / R para girar 90&#176 direita M para movimentar 1 ponto da grade</p>'+
+						'<p>Pressione L para girar esquerda 90&#176 / R para girar 90&#176 direita / M para movimentar 1 ponto da grade</p>'+
 						'<p><b>ROVER 1 - ENTROU - Posição 1,2 N </b></p>'+
 						'<p>Faça a sequência (L M L M L M L M M) </p>'
 	)
@@ -71,13 +71,13 @@ $(function(){
 		  	coord = 'Norte'		  
 		  break;
 		  case -1:
-		  	coord = 'Leste'	
+		  	coord = 'Oeste'	
 		  break;
 		  case -2:
 		  	coord = 'Sul'		  
 		  break;
 		  case -3:
-		  	coord = 'Oeste'		  
+		  	coord = 'Leste'		  
 		  break;
 		}
 		switch(R1){
@@ -85,18 +85,19 @@ $(function(){
 		  	coord = 'Norte'		  
 		  break;
 		  case 1:
-		  	coord = 'Oeste'		  
+		  	coord = 'Leste'		  
 		  break;
 		  case 2:
 		  	coord = 'Sul'		  
 		  break;
 		  case 3:
-		  	coord = 'Leste'		  
+		  	coord = 'Oeste'		  
 		  break;
 
 		}
-		$('#plato').append("<h6 style='font-size:10px'>"+coord+' - Posição: X: '+X1+' Posição Y: '+Y1)
 
+
+		$('#plato').append("<h6 style='font-size:10px'>"+coord+' - Posição: X: '+X1+' Posição Y: '+Y1)
 		
 		if(i == 9){
 			R1 = 3;
@@ -110,6 +111,12 @@ $(function(){
 			)
 						
 		}
+
+		if(i == 19){		
+			$('#plato').append("<h6 style='font-size:12px;color:red'>FIM DA MISSÃO")
+
+		}
+
 
 	}
 
